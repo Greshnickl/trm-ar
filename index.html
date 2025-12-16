@@ -197,9 +197,16 @@
     <a-entity light="type: directional; intensity: 0.6" position="0 1 1"></a-entity>
 
     <!-- Marker -->
-    <a-marker preset="hiro">
-      <a-box position="0 0.5 0"></a-box>
-    </a-marker>
+    <a-nft
+  type="nft"
+  url="markers/my-marker/my-marker"
+>
+  <a-text
+    value="Hello AR"
+    position="0 0 0"
+    scale="5 5 5"
+  ></a-text>
+</a-nft>
     <a-entity camera></a-entity>
   </a-scene>
 
