@@ -20,16 +20,17 @@
 
   <!-- NFT маркер -->
   <a-nft
-    type="nft"
-    url="markers/my-marker/my-marker"
-    smooth="true"
-    smoothCount="10"
-    smoothTolerance="0.01"
-    smoothThreshold="5">
+  type="nft"
+  url="markers/my-marker/my-marker"
+  smooth="true"
+  smoothCount="10"
+  smoothTolerance="0.01"
+  smoothThreshold="5">
 
-    <!-- Простая 3D-модель для теста -->
-    <a-box position="0 0 0" scale="1 1 1" material="color: red;"></a-box>
-  </a-nft>
+  <!-- Визуальный индикатор: красный куб -->
+  <a-box position="0 0.5 0" rotation="0 45 0" scale="0.5 0.5 0.5" material="color: red;" animation="property: rotation; to: 0 405 0; loop: true; dur: 5000"></a-box>
+
+</a-nft>
 
   <!-- Камера -->
   <a-entity camera></a-entity>
