@@ -181,14 +181,7 @@
   </script>
 </head>
 <body>
-  <!-- HUD -->
-  <div class="hud" id="hud">
-    <button id="btn-rot-l">⟲</button>
-    <button id="btn-rot-r">⟳</button>
-    <button id="btn-scale--">−</button>
-    <button id="btn-scale-+">＋</button>
-    <button id="btn-color">🎨</button>
-  </div>
+
 
   <a-scene
     embedded
@@ -210,35 +203,6 @@
     <a-entity camera></a-entity>
   </a-scene>
 
-  <script>
-    const hud  = document.getElementById('hud');
-    const cube = document.getElementById('cube');
-
-    // Buttons
-    document.getElementById('btn-rot-l').addEventListener('click', () => nudgeRot(-15));
-    document.getElementById('btn-rot-r').addEventListener('click', () => nudgeRot( 15));
-    function nudgeRot(delta){
-      const r = cube.getAttribute('rotation');
-      cube.setAttribute('rotation', {x:r.x, y:r.y + delta, z:r.z});
-    }
-
-    document.getElementById('btn-scale--').addEventListener('click', () => nudgeScale(0.9));
-    document.getElementById('btn-scale-+').addEventListener('click', () => nudgeScale(1.1));
-    function nudgeScale(mult){
-      const s = cube.getAttribute('scale');
-      cube.setAttribute('scale', {
-        x: clamp(s.x * mult, 0.2, 3),
-        y: clamp(s.y * mult, 0.2, 3),
-        z: clamp(s.z * mult, 0.2, 3)
-      });
-    }
-
-    document.getElementById('btn-color').addEventListener('click', () => cube.emit('random-color'));
-
-    // Gesture hooks
-    cube.addEventListener('tap',       () => cube.emit('toggle-spin'));        // single tap: spin on/off
-    cube.addEventListener('doubletap', () => cube.emit('random-color'));       // double tap: recolor
-    cube.addEventListener('longpress', () => hud.classList.toggle('hidden'));  // long press: show/hide HUD
-  </script>
+  
 </body>
 </html>
